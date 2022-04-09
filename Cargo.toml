@@ -1,0 +1,383 @@
+[package]
+name = "untitled7"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version = "0.11", features = [ "json"] }
+anyhow = "1.0"
+actix = "0.12.0"
+actix-broker = "0.4.1"
+actix-web = "4.0.0-beta.8"
+riker = "0.4.2"
+chrono = "0.4.19"
+actix-files = "0.4"
+actix-rt = "1"
+actix-web-actors = "3"
+env_logger = "0.8"
+futures = "0.3"
+log = "0.4"
+rand = "0.7"
+tracing-appender = "0.1.2"
+tracing = "0.1.26"
+tracing-subscriber = "0.2.20"
+curl = "0.4.38"
+tokio = { version = "1.11.0", features = ["full"] }
+clap = "2.33.3"
+tokio-util = { version = "0.6", features = ["full"] }
+socket2 = "0.3"
+scrap = "0.5"
+async-channel = "1.6.1"
+serde_json = "1.0.67"
+serde = { version = "1.0", features = ["derive"] }
+tokio-serde = "0.8.0"
+structopt = "0.3.23"
+tokio-tungstenite = "0.15.0"
+futures-util = "0.3.17"
+url = "2.2.2"
+derive_more = "0.99.17"
+lazy_static = "1.4.0"
+async-process = "1.2.0"
+rexpect = "0.4"
+smol = "1.2.5"
+image-base64 = "0.1.0"
+bytes = "1.1.0"
+#libp2p = { version = "0.39",  features = ["tcp-tokio"] }
+dashmap = "4.0.2"
+sled = "0.34.7"
+quinn = "0.7"
+protobuf = "2.25.2"
+rcgen = "0.8"
+directories = "2.0.0"
+enigo = "0.0.14"
+async-trait = "0.1.52"
+async_once = "0.2.6"
+async_static = "0.1.3"
+once_cell = "1"
+scopeguard = "1.1.0"
+embed_plist = "1.2.2"
+tracing-chrome = "0.4.0"
+xshell = "0.2.0"
+mongodb = "2.1.0"
+axum = { version = "0.4.8", features = ["ws"] }
+s2n-quic = "1.0.1"
+pest = "2.0"
+pest_derive = "2.0"
+axum-server = "0.3.3"
+prost-build = "0.8"
+prost = "0.8" # protobuf 处理
+hyper = "0.14.18"
+tower = "0.4.12"
+
+[[example]]
+name = "demo1"
+path = "apps/demo1.rs"
+
+
+[[example]]
+name = "demo2"
+path = "apps/demo2.rs"
+
+[[example]]
+name = "demo3"
+path = "apps/demo3.rs"
+
+[[example]]
+name = "demo4"
+path = "apps/demo4.rs"
+
+[[example]]
+name = "demo5"
+path = "apps/demo5.rs"
+
+
+[[example]]
+name = "demo6"
+path = "apps/demo6.rs"
+
+[[example]]
+name = "demo7"
+path = "apps/demo7.rs"
+
+
+[[example]]
+name = "demo8"
+path = "apps/demo8.rs"
+
+
+[[example]]
+name = "demo9"
+path = "apps/demo9.rs"
+
+[[example]]
+name = "demo10"
+path = "apps/demo10.rs"
+
+[[example]]
+name = "demo11"
+path = "apps/demo11.rs"
+
+
+[[example]]
+name = "demo12"
+path = "apps/demo12.rs"
+
+[[example]]
+name = "demo13"
+path = "apps/demo13.rs"
+
+[[example]]
+name = "demo14"
+path = "apps/demo14.rs"
+
+
+[[example]]
+name = "demo15"
+path = "apps/demo15.rs"
+
+[[example]]
+name = "demo16"
+path = "apps/demo16.rs"
+
+
+[[example]]
+name = "demo17"
+path = "apps/demo17.rs"
+
+
+[[example]]
+name = "demo18"
+path = "apps/demo18.rs"
+
+[[example]]
+name = "demo19"
+path = "apps/demo19.rs"
+
+
+[[example]]
+name = "demo20"
+path = "apps/demo20.rs"
+
+[[example]]
+name = "demo21"
+path = "apps/demo21.rs"
+
+[[example]]
+name = "demo22"
+path = "apps/demo22.rs"
+
+
+[[example]]
+name = "demo23"
+path = "apps/demo23.rs"
+
+
+[[example]]
+name = "demo24"
+path = "apps/demo24.rs"
+
+[[example]]
+name = "demo25"
+path = "apps/demo25.rs"
+
+
+[[example]]
+name = "demo26"
+path = "apps/demo26.rs"
+
+[[example]]
+name = "demo27"
+path = "apps/demo27.rs"
+
+
+[[example]]
+name = "demo28"
+path = "apps/demo28.rs"
+
+[[example]]
+name = "demo29"
+path = "apps/demo29.rs"
+
+
+[[example]]
+name = "demo30"
+path = "apps/demo30.rs"
+
+
+
+[[example]]
+name = "demo31"
+path = "apps/demo31.rs"
+
+
+[[example]]
+name = "demo32"
+path = "apps/demo32.rs"
+
+
+[[example]]
+name = "demo33"
+path = "apps/demo33.rs"
+
+
+[[example]]
+name = "demo34"
+path = "apps/demo34.rs"
+
+
+[[example]]
+name = "demo35"
+path = "apps/demo35.rs"
+
+
+[[example]]
+name = "demo36"
+path = "apps/demo36.rs"
+
+
+[[example]]
+name = "demo37"
+path = "apps/demo37.rs"
+
+[[example]]
+name = "demo38"
+path = "apps/demo38.rs"
+
+[[example]]
+name = "demo39"
+path = "apps/demo39.rs"
+
+[[example]]
+name = "demo40"
+path = "apps/demo40.rs"
+
+
+[[example]]
+name = "demo41"
+path = "apps/demo41.rs"
+
+
+[[example]]
+name = "demo42"
+path = "apps/demo42.rs"
+
+[[example]]
+name = "demo43"
+path = "apps/demo43.rs"
+
+[[example]]
+name = "demo44"
+path = "apps/demo44.rs"
+[[example]]
+name = "demo45"
+path = "apps/demo45.rs"
+
+
+[[example]]
+name = "demo46"
+path = "apps/demo46.rs"
+
+[[example]]
+name = "demo47"
+path = "apps/demo47.rs"
+
+
+[[example]]
+name = "demo48"
+path = "apps/demo48.rs"
+
+[[example]]
+name = "demo49"
+path = "apps/demo49.rs"
+
+[[example]]
+name = "demo50"
+path = "apps/demo50.rs"
+
+
+[[example]]
+name = "demo51"
+path = "apps/demo51.rs"
+
+[[example]]
+name = "demo52"
+path = "apps/demo52.rs"
+
+[[example]]
+name = "demo53"
+path = "apps/demo53.rs"
+
+
+[[example]]
+name = "demo54"
+path = "apps/demo54.rs"
+
+
+
+[[example]]
+name = "demo55"
+path = "apps/demo55.rs"
+
+
+[[example]]
+name = "demo56"
+path = "apps/demo56.rs"
+
+
+[[example]]
+name = "demo57"
+path = "apps/demo57.rs"
+
+[[example]]
+name = "demo58"
+path = "apps/demo58.rs"
+
+[[example]]
+name = "demo59"
+path = "apps/demo59.rs"
+
+
+
+[[example]]
+name = "demo60"
+path = "apps/demo60.rs"
+
+
+[[example]]
+name = "demo61"
+path = "apps/demo61.rs"
+
+
+[[example]]
+name = "demo62"
+path = "apps/demo62.rs"
+
+
+[[example]]
+name = "demo63"
+path = "apps/demo63.rs"
+
+
+[[example]]
+name = "demo64"
+path = "apps/demo64.rs"
+
+
+[[example]]
+name = "demo65"
+path = "apps/demo65.rs"
+
+
+[[example]]
+name = "demo66"
+path = "apps/demo66.rs"
+
+[[example]]
+name = "demo67"
+path = "apps/demo67.rs"
+
+[[example]]
+name = "demo68"
+path = "apps/demo68.rs"

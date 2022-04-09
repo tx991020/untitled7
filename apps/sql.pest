@@ -1,0 +1,13 @@
+WHITESPACE = _{ " " }
+keyword = { ^"select" | ^"from" | ^"where" }
+selection = @{ (ASCII_ALPHANUMERIC | "_")+ ~ ("," ~ selection)* | "*" }
+terminator = { ";" }
+sql = { (keyword ~ selection)+ ~ terminator }
+
+
+// Experimental
+ident = { (ASCII_ALPHANUMERIC | "_")+ }
+access_operator = { "." }
+star_operator = { "*" }
+column = { (star_operator ~ !access_operator) | ident ~ (access_operator ~ (ident | star_operator)+)* }
+column_selection = { column ~ ("," ~ column)* ~ !"," }
