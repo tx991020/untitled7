@@ -1,5 +1,6 @@
 use s2n_quic::Server;
-use anyhow::Result;
+use std::error::Error;
+
 
 /// NOTE: this certificate is to be used for demonstration purposes only!
 pub static CERT_PEM: &str = include_str!("/Users/andy/CLionProjects/untitled7/cert.pem");
@@ -7,7 +8,7 @@ pub static CERT_PEM: &str = include_str!("/Users/andy/CLionProjects/untitled7/ce
 pub static KEY_PEM: &str = include_str!("/Users/andy/CLionProjects/untitled7/key.pem");
 
 #[tokio::main]
-async fn main() -> Result<()> {
+async fn main() ->Result<(), Box<dyn Error>>  {
     let mut server = Server::builder()
         .with_tls((CERT_PEM, KEY_PEM))?
         .with_io("127.0.0.1:4433")?

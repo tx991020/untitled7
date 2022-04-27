@@ -1,18 +1,16 @@
-
-
-use std::{fs, io, net::SocketAddr, sync::Arc};
-use std::net::{ToSocketAddrs, UdpSocket};
-use tokio:: sync::mpsc;
 use anyhow::{anyhow, bail, Context, Result};
+use std::net::{ToSocketAddrs, UdpSocket};
+use std::{fs, io, net::SocketAddr, sync::Arc};
+use tokio::sync::mpsc;
 
-
-
-
-use protobuf::Message;
 use futures::stream::StreamExt;
-use quinn::{Certificate, CertificateChain, ClientConfig, ClientConfigBuilder, Endpoint, Incoming, NewConnection, PrivateKey, ReadError, SendStream, ServerConfig, ServerConfigBuilder, TransportConfig};
+use protobuf::Message;
 use quinn::Connection as QConnection;
-
+use quinn::{
+    Certificate, CertificateChain, ClientConfig, ClientConfigBuilder, Endpoint, Incoming,
+    NewConnection, PrivateKey, ReadError, SendStream, ServerConfig, ServerConfigBuilder,
+    TransportConfig,
+};
 
 const SERVER_NAME: &str = "localhost";
 
@@ -20,14 +18,12 @@ type Value = Result<Vec<u8>>;
 type Sender = mpsc::UnboundedSender<Value>;
 type Receiver = mpsc::UnboundedReceiver<Value>;
 
-
 pub fn configure_server() -> Result<(ServerConfig)> {
-
     let dirs = directories::UserDirs::new().unwrap();
     let path = dirs.home_dir();
     let cert_path = path.join("cert.der");
     let key_path = path.join("key.der");
-    println!("cert path{:?}",&cert_path );
+    println!("cert path{:?}", &cert_path);
     let (cert, key) = match fs::read(&cert_path).and_then(|x| Ok((x, fs::read(&key_path)?))) {
         Ok(x) => x,
         Err(ref e) if e.kind() == io::ErrorKind::NotFound => {
@@ -45,11 +41,8 @@ pub fn configure_server() -> Result<(ServerConfig)> {
         }
     };
 
-
-
     let key = quinn::PrivateKey::from_der(&key)?;
     let cert = quinn::Certificate::from_der(&cert)?;
-
 
     let mut transport_config = TransportConfig::default();
 
@@ -81,9 +74,7 @@ fn configure_client() -> Result<ClientConfig> {
 }
 
 pub fn new_server(addr: SocketAddr) -> Result<(Incoming)> {
-
     let (mut server_config) = configure_server()?;
-
 
     let mut endpoint_builder = Endpoint::builder();
     endpoint_builder.listen(server_config);
@@ -102,23 +93,17 @@ pub fn new_server(addr: SocketAddr) -> Result<(Incoming)> {
 //     Connection::new_for_client(new_conn.connection).await
 // }
 
-
 pub struct Connection {
     conn: QConnection,
     tx: SendStream,
     rx: Receiver,
 }
 
-
-
-
 async fn handle_request(mut rx: quinn::RecvStream, tx: Sender) -> Result<()> {
-
-    let mut buffer:Vec<u8> = Vec::with_capacity(1024);
+    let mut buffer: Vec<u8> = Vec::with_capacity(1024);
     loop {
         match rx.read(&mut buffer).await {
             Ok(Some(n)) => {
-
                 tx.send(Ok(buffer[0..n].to_owned()));
             }
             Ok(None) => {
@@ -136,20 +121,17 @@ async fn handle_request(mut rx: quinn::RecvStream, tx: Sender) -> Result<()> {
         buffer.clear();
     }
 
-
-
-
     Ok(())
 }
 
-
-async fn handle_request1((mut send, mut recv): (quinn::SendStream, quinn::RecvStream), tx: Sender) -> Result<()> {
-
-    let mut buffer:Vec<u8> = vec![0; 1024];
+async fn handle_request1(
+    (mut send, mut recv): (quinn::SendStream, quinn::RecvStream),
+    tx: Sender,
+) -> Result<()> {
+    let mut buffer: Vec<u8> = vec![0; 1024];
     loop {
         match recv.read(&mut buffer).await {
             Ok(Some(n)) => {
-
                 tx.send(Ok(buffer[0..n].to_owned()));
             }
             Ok(None) => {

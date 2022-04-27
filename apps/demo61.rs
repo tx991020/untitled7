@@ -1,6 +1,6 @@
 use s2n_quic::{client::Connect, Client};
 use std::{error::Error, net::SocketAddr};
-use anyhow::Result;
+
 
 /// NOTE: this certificate is to be used for demonstration purposes only!
 pub static CERT_PEM: &str = include_str!("/Users/andy/CLionProjects/untitled7/cert.pem");
@@ -10,7 +10,7 @@ pub static CERT_PEM: &str = include_str!("/Users/andy/CLionProjects/untitled7/ce
 
 
 #[tokio::main]
-async fn main() -> Result<()> {
+async fn main() ->Result<(), Box<dyn Error>>  {
     let client = Client::builder()
         .with_tls(CERT_PEM)?
         .with_io("0.0.0.0:0")?

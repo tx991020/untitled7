@@ -16,3 +16,23 @@ pub mod shirt {
         Large = 2,
     }
 }
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ClientRequest {
+    #[prost(uint32, tag="1")]
+    pub num_resp: u32,
+    #[prost(message, optional, tag="3")]
+    pub data: ::core::option::Option<Payload>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Payload {
+    #[prost(map="string, string", tag="1")]
+    pub fields: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ServerResponse {
+    #[prost(uint32, tag="1")]
+    pub resp_idx: u32,
+    /// The number of requests the client sent us
+    #[prost(uint32, tag="2")]
+    pub num_reqs: u32,
+}

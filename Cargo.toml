@@ -5,8 +5,13 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[build-dependencies]
+cc = "1.0.46"
+bindgen = "0.59.2"
+
+
 [dependencies]
-reqwest = { version = "0.11", features = [ "json"] }
+reqwest = { version = "0.11", features = ["json"] }
 anyhow = "1.0"
 actix = "0.12.0"
 actix-broker = "0.4.1"
@@ -66,10 +71,20 @@ s2n-quic = "1.0.1"
 pest = "2.0"
 pest_derive = "2.0"
 axum-server = "0.3.3"
-prost-build = "0.8"
+#prost-build = "0.8"
 prost = "0.8" # protobuf 处理
 hyper = "0.14.18"
 tower = "0.4.12"
+tonic-build = { version = "0.6.0" }
+prost-build = "0.10.1"
+libc = "0.2"
+
+wasmer = "2.2.1"
+crossbeam = "0.8.1"
+crossbeam-channel = "0.5.4"
+nanoid = "0.4.0"
+tokio-stream = "0.1.8"
+rayon = "1.5.2"
 
 [[example]]
 name = "demo1"
@@ -381,3 +396,68 @@ path = "apps/demo67.rs"
 [[example]]
 name = "demo68"
 path = "apps/demo68.rs"
+
+
+[[example]]
+name = "demo69"
+path = "apps/demo69.rs"
+
+[[example]]
+name = "demo70"
+path = "apps/demo70.rs"
+
+[[example]]
+name = "demo71"
+path = "apps/demo71.rs"
+
+[[example]]
+name = "demo72"
+path = "apps/demo72.rs"
+
+[[example]]
+name = "demo73"
+path = "apps/demo73.rs"
+
+
+[[example]]
+name = "demo74"
+path = "apps/demo74.rs"
+
+[[example]]
+name = "demo75"
+path = "apps/demo75.rs"
+[[example]]
+name = "demo79"
+path = "apps/demo79.rs"
+
+
+[[example]]
+name = "demo80"
+path = "apps/demo80.rs"
+
+
+[[example]]
+name = "demo81"
+path = "apps/demo81.rs"
+
+
+[[example]]
+name = "demo82"
+path = "apps/demo82.rs"
+
+
+
+[[example]]
+name = "demo83"
+path = "apps/demo83.rs"
+
+
+[[example]]
+name = "demo84"
+path = "apps/demo84.rs"
+
+
+[[example]]
+name = "demo85"
+path = "apps/demo85.rs"
+
