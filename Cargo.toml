@@ -461,3 +461,14 @@ path = "apps/demo84.rs"
 name = "demo85"
 path = "apps/demo85.rs"
 
+
+
+[[example]]
+name = "demo86"
+path = "apps/demo86.rs"
+
+
+
+[[example]]
+name = "demo87"
+path = "apps/demo87.rs"
