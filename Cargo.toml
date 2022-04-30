@@ -29,7 +29,7 @@ tracing-appender = "0.1.2"
 tracing = "0.1.26"
 tracing-subscriber = "0.2.20"
 curl = "0.4.38"
-tokio = { version = "1.11.0", features = ["full"] }
+tokio = { version = "1.17.0", features = ["full"] }
 clap = "2.33.3"
 tokio-util = { version = "0.6", features = ["full"] }
 socket2 = "0.3"
@@ -85,6 +85,8 @@ crossbeam-channel = "0.5.4"
 nanoid = "0.4.0"
 tokio-stream = "0.1.8"
 rayon = "1.5.2"
+sqlx = { version = "0.5.11", features = ["postgres","runtime-tokio-rustls","macros" ] }
+dotenv = "0.15.0"
 
 [[example]]
 name = "demo1"
@@ -472,3 +474,45 @@ path = "apps/demo86.rs"
 [[example]]
 name = "demo87"
 path = "apps/demo87.rs"
+
+
+[[example]]
+name = "demo88"
+path = "apps/demo88.rs"
+
+
+
+[[example]]
+name = "demo89"
+path = "apps/demo89.rs"
+
+
+[[example]]
+name = "demo90"
+path = "apps/demo90.rs"
+
+[[example]]
+name = "demo91"
+path = "apps/demo91.rs"
+
+[[example]]
+name = "demo92"
+path = "apps/demo92.rs"
+
+
+[[example]]
+name = "demo93"
+path = "apps/demo93.rs"
+
+
+
+[[example]]
+name = "demo94"
+path = "apps/demo94.rs"
+
+
+[[example]]
+name = "demo95"
+path = "apps/demo95.rs"
+
+
