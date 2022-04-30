@@ -1,7 +1,7 @@
 use anyhow::Result;
 use std::env;
 
-//Stu derive queryable
+
 #[derive(Debug)]
 pub struct Student {
     id: i32,
@@ -27,12 +27,13 @@ async fn main() -> Result<()> {
         Ok(res) => println!("ok {:?}", res),
         Err(e) => println!("err{:?}", e),
     }
-    //insert sql format
+    //create a new student
     let stu = Student {
         id: 2,
         name: "lisi".to_string(),
         age: 18,
     };
+    //sqlx insert
     let result = sqlx::query("INSERT INTO student (name, age) VALUES ($1, $2)")
         .bind(&stu.name)
         .bind(&stu.age)

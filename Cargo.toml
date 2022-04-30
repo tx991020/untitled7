@@ -30,7 +30,7 @@ tracing = "0.1.26"
 tracing-subscriber = "0.2.20"
 curl = "0.4.38"
 tokio = { version = "1.17.0", features = ["full"] }
-clap = "2.33.3"
+
 tokio-util = { version = "0.6", features = ["full"] }
 socket2 = "0.3"
 scrap = "0.5"
@@ -63,7 +63,6 @@ async_static = "0.1.3"
 once_cell = "1"
 scopeguard = "1.1.0"
 embed_plist = "1.2.2"
-tracing-chrome = "0.4.0"
 xshell = "0.2.0"
 mongodb = "2.1.0"
 axum = { version = "0.4.8", features = ["ws"] }
@@ -87,6 +86,7 @@ tokio-stream = "0.1.8"
 rayon = "1.5.2"
 sqlx = { version = "0.5.11", features = ["postgres","runtime-tokio-rustls","macros" ] }
 dotenv = "0.15.0"
+clap = { version = "3", features = ["derive"] } # 命令行解析
 
 [[example]]
 name = "demo1"
@@ -514,5 +514,9 @@ path = "apps/demo94.rs"
 [[example]]
 name = "demo95"
 path = "apps/demo95.rs"
+
+[[example]]
+name = "demo96"
+path = "apps/demo96.rs"
 
 
